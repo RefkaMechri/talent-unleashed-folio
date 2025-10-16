@@ -1,5 +1,6 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Typewriter } from "@/components/Typewriter";
 import heroImage from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
@@ -23,14 +24,29 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="animate-slide-up flex items-center justify-center gap-2 mb-4">
+            <Sparkles className="h-6 w-6 text-accent animate-pulse" />
+            <span className="text-accent font-medium">Portfolio Créatif</span>
+          </div>
+
           <div className="animate-slide-up">
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
               Créateur de
-              <span className="gradient-text block mt-2">Solutions Digitales</span>
+              <span className="gradient-text block mt-2">
+                <Typewriter
+                  texts={[
+                    "Solutions Digitales",
+                    "Expériences Uniques",
+                    "Projets Innovants",
+                    "Applications Modernes",
+                  ]}
+                />
+              </span>
             </h1>
           </div>
 

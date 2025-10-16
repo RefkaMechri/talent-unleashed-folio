@@ -55,18 +55,22 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="glass-card overflow-hidden hover-glow group"
+              className="glass-card overflow-hidden hover-glow group perspective-1000"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden transform transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-accent-glow">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
               </div>
 
-              <div className="p-6">
+              <div className="p-6 relative">
+                <div className="absolute -top-3 right-6 w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
+                  <ExternalLink className="h-5 w-5 text-accent-foreground" />
+                </div>
                 <h3 className="text-2xl font-display font-semibold mb-2">
                   {project.title}
                 </h3>
