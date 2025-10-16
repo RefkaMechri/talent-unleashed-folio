@@ -28,7 +28,7 @@ export const About = () => {
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 reveal">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             À Propos de <span className="gradient-text">Moi</span>
           </h2>
@@ -41,8 +41,7 @@ export const About = () => {
           {skills.map((skill, index) => (
             <Card
               key={index}
-              className="glass-card p-6 hover-glow group card-3d reveal"
-              style={{ transitionDelay: `${index * 0.1}s` }}
+              className="glass-card p-6 hover-glow group"
             >
               <div className="mb-4 inline-block p-3 bg-gradient-primary rounded-lg">
                 <skill.icon className="h-6 w-6 text-primary-foreground" />
