@@ -2,6 +2,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import pharmaImg from "@/assets/pharma.png"; 
 import epilepImg from "@/assets/epilepTrack.png"; 
 import fungiImage from "@/assets/fungi.png";
@@ -53,6 +54,14 @@ const projects = [
 ];
 
 export const Projects = () => {
+  const [filter, setFilter] = useState<string>("All");
+  
+  const allTechnologies = ["All", ...new Set(projects.flatMap(p => p.technologies))];
+  
+  const filteredProjects = filter === "All" 
+    ? projects 
+    : projects.filter(p => p.technologies.includes(filter));
+
   return (
     <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-4">
@@ -64,8 +73,23 @@ export const Projects = () => {
            A glimpse into my creations and experiments          </p>
         </div>
 
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          {allTechnologies.map((tech) => (
+            <Button
+              key={tech}
+              onClick={() => setFilter(tech)}
+              variant={filter === tech ? "default" : "outline"}
+              size="sm"
+              className={filter === tech ? "bg-gradient-primary" : "border-primary/50"}
+            >
+              {tech}
+            </Button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <Card
               key={index}
               className="glass-card overflow-hidden hover-glow group perspective-1000"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -74,6 +75,7 @@ export const Navigation = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
               </a>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}

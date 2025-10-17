@@ -10,6 +10,9 @@ import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { CustomCursor } from "@/components/CustomCursor";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { Stats } from "@/components/sections/Stats";
 
 const Index = () => {
   useEffect(() => {
@@ -23,11 +26,14 @@ const Index = () => {
 
   return (
     <div className="scroll-smooth relative">
+      <ScrollProgress />
       <ParticlesBackground />
       <CustomCursor />
+      <ScrollToTop />
       <Navigation />
       <main className="relative z-10">
         <Hero />
+        <Stats />
         <About />
         <Experience />
         <Projects />
