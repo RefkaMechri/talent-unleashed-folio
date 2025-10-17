@@ -4,37 +4,39 @@ import { Badge } from "@/components/ui/badge";
 
 const competitions = [
   {
-    name: "Hackathon Innovation 2024",
-    position: "1ère Place",
-    date: "Mars 2024",
-    description: "Développement d'une solution IA innovante pour l'agriculture durable.",
+    name: "TWISE NIGHT 2025",
+    position: "National Top 10",
+    date: "April 2025",
+    description: "Development of an intelligent AI platform for healthcare",
     award: "Trophy",
     color: "text-yellow-500",
   },
   {
-    name: "Code Challenge National",
-    position: "Top 10",
-    date: "Janvier 2024",
-    description: "Compétition d'algorithmique et résolution de problèmes complexes.",
-    award: "Medal",
+    name: "Entrepreneurship Competition",
+    position: " Initiator Status ",
+    date: "Febrary 2025",
+    description: "Competition organized by the University of Monastir, where our team presented an innovative project idea.",
+    award: "Professional Mentorship",
     color: "text-blue-500",
   },
   {
-    name: "Web Design Contest",
-    position: "2ème Place",
-    date: "Novembre 2023",
-    description: "Création d'une interface utilisateur innovante pour une application mobile.",
+    name: "La Nuit de l'Info",
+    position: "1st Place",
+    date: "December 2024",
+    description: "National hackathon where our team developed an innovative web application in one night, guided by professional mentors and evaluated on design, architecture, and collaboration.",
     award: "Award",
     color: "text-purple-500",
   },
-  {
-    name: "Startup Weekend",
-    position: "Finaliste",
-    date: "Septembre 2023",
-    description: "Développement d'un MVP en 48h avec une équipe multidisciplinaire.",
-    award: "Trophy",
-    color: "text-orange-500",
+    {
+    name: "La Nuit de l'Info",
+    position: "1st Place",
+    date: "December 2023",
+    description: "National hackathon where our team developed an innovative web application in one night, guided by professional mentors and evaluated on design, architecture, and collaboration.",
+    award: "Award",
+    color: "text-purple-500",
   },
+
+
 ];
 
 const getIcon = (award: string) => {
@@ -53,12 +55,12 @@ export const Competitions = () => {
     <section id="competitions" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="gradient-text">Compétitions</span> & Achievements
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Mes participations et réussites dans diverses compétitions
-          </p>
+        <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+  <span className="gradient-text">Competing</span> & Winning
+</h2>
+<p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+  Highlights of my journey through competitions and the achievements I earned along the way.
+</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">

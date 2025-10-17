@@ -2,39 +2,53 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import pharmaImg from "@/assets/pharma.png"; 
+import epilepImg from "@/assets/epilepTrack.png"; 
+import fungiImage from "@/assets/fungi.png";
+import ISIMMImage from "@/assets/ISIMM.png";
+
 
 const projects = [
+{
+  title: "PharmaLab – Fattouma Bourguiba Hospital",
+  description: "Desktop application automating clinical decision-making with AI-driven predictive models. Recommends optimal drug dosages and provides healthcare professionals with an intuitive interface to manage patient treatments.",
+  technologies: ["Python", "electron.js","Machine Learning", "Desktop App", "AI", "Healthcare"],
+  image: pharmaImg ,
+  github: "https://github.com/RefkaMechri/PharmaLab",
+  demo: "https://demo.com",
+},
+
+
   {
-    title: "Application E-Commerce",
-    description: "Plateforme de vente en ligne complète avec panier, paiement et gestion des commandes.",
-    technologies: ["React", "Node.js", "Stripe", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
-    github: "https://github.com",
+    title: "EpilepTrack",
+  description: "An AI-powered platform that assists non-specialists in interpreting EEG signals, developed in collaboration with doctors at Sahloul Hospital, and enabling remote validation by a neurophysiologist.",
+    technologies: ["React.js", "Flask", "MySQL", "Machine Learning", "AI", "Healthcare"],
+    image: epilepImg,
+    github: "https://github.com/RefkaMechri/epilepTrack",
     demo: "https://demo.com",
   },
   {
-    title: "Dashboard Analytics",
-    description: "Tableau de bord interactif pour visualiser et analyser des données en temps réel.",
-    technologies: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "FungiScan ",
+    description: "FungiScan AI is an innovative AI-based solution designed to automatically detect fungal diseases affecting crops. Using computer vision and machine learning, the system can analyze plant images captured via drones, smartphones, or emedded sensors to identify infections and recommend precise actions.",
+ technologies: [
+      "Python",
+      "TensorFlow / PyTorch",
+      "OpenCV",
+      "Scikit-learn",
+      "Flask",
+      "React.js",
+    ],   
+     image: fungiImage,
+    github: "https://github.com/RefkaMechri/FungiScan-AI",
+    demo: "https://drive.google.com/drive/u/2/folders/1CnIGGxvr7ubnRcycVZSCyS-Tq3arf79E",
   },
   {
-    title: "App Mobile Social",
-    description: "Application mobile de réseau social avec messagerie instantanée et partage de contenu.",
-    technologies: ["React Native", "Firebase", "Redux"],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
-  },
-  {
-    title: "Portfolio Generator",
-    description: "Outil de création de portfolios personnalisés avec templates modernes.",
-    technologies: ["Next.js", "Tailwind", "Vercel"],
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "ISIMM Website",
+    description: "The ISIMM website is an online platform dedicated to education, training, and professional development. It provides comprehensive information on training programs, educational resources, and events organized by the institute.",
+    technologies: ["React.js", "Tailwind", "Node.js","MySQL"],
+    image: ISIMMImage,
+    github: "https://github.com/RefkaMechri/isimm?tab=readme-ov-file",
+    demo: "https://github.com/RefkaMechri/isimm?tab=readme-ov-file",
   },
 ];
 
@@ -44,11 +58,10 @@ export const Projects = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Mes <span className="gradient-text">Projets</span>
+            Ideas <span className="gradient-text">in</span> action
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Découvrez mes réalisations et projets personnels
-          </p>
+           A glimpse into my creations and experiments          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

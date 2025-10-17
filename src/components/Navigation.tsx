@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Accueil", href: "#hero" },
-  { label: "À propos", href: "#about" },
-  { label: "Expérience", href: "#experience" },
-  { label: "Projets", href: "#projects" },
-  { label: "Compétitions", href: "#competitions" },
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Competitions", href: "#competitions" },
   { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
@@ -46,7 +46,16 @@ export const Navigation = () => {
             }}
             className="text-2xl font-display font-bold gradient-text"
           >
-            Portfolio
+       <div className="animate-slide-up flex items-center justify-center gap-2 mb-4">
+  <Monitor className="h-6 w-6 animate-pulse" style={{ color: "hsl(252, 100%, 67%)" }} />
+  <span
+    className="font-medium bg-clip-text text-transparent"
+    style={{ backgroundImage: "var(--gradient-primary)" }}
+  >
+    Refka Mechri
+  </span>
+</div>
+
           </a>
 
           {/* Desktop Navigation */}

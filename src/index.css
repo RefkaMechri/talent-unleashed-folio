@@ -160,6 +160,7 @@ All colors MUST be HSL.
       background-position: 0% 50%;
     }
   }
+  
 
   .reveal {
     opacity: 0;
@@ -171,4 +172,6 @@ All colors MUST be HSL.
     opacity: 1;
     transform: translateY(0);
   }
+
+
 }
