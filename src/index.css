@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 220 20% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 262 83% 58%;
+    --primary: 280 90% 65%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 220 20% 15%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 20% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 188 95% 52%;
+    --accent: 170 100% 50%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
@@ -34,23 +34,24 @@ All colors MUST be HSL.
 
     --border: 220 20% 18%;
     --input: 220 20% 18%;
-    --ring: 262 83% 58%;
+    --ring: 280 90% 65%;
 
     --radius: 0.75rem;
 
     /* Custom portfolio tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(235 75% 62%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(188 95% 52%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(280 90% 65%) 0%, hsl(250 85% 60%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(170 100% 50%) 0%, hsl(200 100% 45%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 20% 10%) 100%);
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(262 83% 58% / 0.3) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, hsl(188 95% 52% / 0.2) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, hsl(235 75% 62% / 0.2) 0px, transparent 50%);
+    --gradient-mesh: radial-gradient(at 20% 30%, hsl(280 90% 65% / 0.25) 0px, transparent 50%),
+                     radial-gradient(at 80% 20%, hsl(170 100% 50% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 40% 80%, hsl(200 100% 45% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 90% 70%, hsl(310 85% 60% / 0.2) 0px, transparent 50%);
     
-    --shadow-glow: 0 0 60px -10px hsl(262 83% 58% / 0.5);
-    --shadow-accent-glow: 0 0 60px -10px hsl(188 95% 52% / 0.6);
+    --shadow-glow: 0 0 60px -10px hsl(280 90% 65% / 0.6);
+    --shadow-accent-glow: 0 0 60px -10px hsl(170 100% 50% / 0.7);
     --shadow-elegant: 0 20px 80px -20px hsl(220 25% 5% / 0.6);
     
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .light {
@@ -63,7 +64,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 7%;
 
-    --primary: 262 83% 58%;
+    --primary: 280 90% 65%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 220 20% 92%;
@@ -72,7 +73,7 @@ All colors MUST be HSL.
     --muted: 220 20% 92%;
     --muted-foreground: 215 20% 35%;
 
-    --accent: 188 95% 52%;
+    --accent: 170 100% 50%;
     --accent-foreground: 220 25% 7%;
 
     --destructive: 0 84% 60%;
@@ -80,7 +81,7 @@ All colors MUST be HSL.
 
     --border: 220 20% 88%;
     --input: 220 20% 88%;
-    --ring: 262 83% 58%;
+    --ring: 280 90% 65%;
 
     --gradient-card: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 100%) 100%);
     --shadow-elegant: 0 20px 60px -20px hsl(220 25% 40% / 0.3);
@@ -177,20 +178,28 @@ All colors MUST be HSL.
   .gradient-shift {
     background: linear-gradient(
       270deg,
-      hsl(262 83% 58%),
-      hsl(235 75% 62%),
-      hsl(188 95% 52%)
+      hsl(280 90% 65%),
+      hsl(170 100% 50%),
+      hsl(200 100% 45%),
+      hsl(310 85% 60%),
+      hsl(280 90% 65%)
     );
-    background-size: 600% 600%;
-    animation: gradientShift 8s ease infinite;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
   }
 
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
     }
+    25% {
+      background-position: 50% 50%;
+    }
     50% {
       background-position: 100% 50%;
+    }
+    75% {
+      background-position: 50% 50%;
     }
     100% {
       background-position: 0% 50%;

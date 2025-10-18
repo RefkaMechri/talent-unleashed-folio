@@ -9,6 +9,7 @@ import { Competitions } from "@/components/sections/Competitions";
 import { Certifications } from "@/components/sections/Certifications";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
+import { GradientBackground } from "@/components/GradientBackground";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { CustomCursor } from "@/components/CustomCursor";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -28,6 +29,7 @@ const Index = () => {
   return (
     <div className="scroll-smooth relative">
       <ScrollProgress />
+      <GradientBackground />
       <ParticlesBackground />
       <CustomCursor />
       <ScrollToTop />
