@@ -73,18 +73,42 @@ export const Projects = () => {
            A glimpse into my creations and experiments          </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {allTechnologies.map((tech) => (
-            <Button
+        {/* Creative Filter Chips */}
+        <div className="flex flex-wrap justify-center gap-3 mb-16 px-4">
+          {allTechnologies.map((tech, index) => (
+            <button
               key={tech}
               onClick={() => setFilter(tech)}
-              variant={filter === tech ? "default" : "outline"}
-              size="sm"
-              className={filter === tech ? "bg-gradient-primary" : "border-primary/50"}
+              className={`
+                group relative px-6 py-3 rounded-2xl font-semibold text-sm
+                transition-all duration-500 ease-out
+                ${filter === tech 
+                  ? 'bg-gradient-tech text-white shadow-glow scale-105' 
+                  : 'bg-card/50 text-muted-foreground hover:text-foreground border border-primary/30 hover:border-primary/60 hover:scale-105'
+                }
+              `}
+              style={{
+                animationDelay: `${index * 0.05}s`,
+              }}
             >
-              {tech}
-            </Button>
+              {/* Animated background on hover */}
+              {filter !== tech && (
+                <div className="absolute inset-0 rounded-2xl bg-gradient-tech opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+              )}
+              
+              {/* Tech icon indicator */}
+              <span className="relative z-10 flex items-center gap-2">
+                {filter === tech && (
+                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                )}
+                {tech}
+              </span>
+              
+              {/* Bottom glow effect */}
+              {filter === tech && (
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-tech blur-md" />
+              )}
+            </button>
           ))}
         </div>
 

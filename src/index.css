@@ -8,50 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 25% 7%;
+    --background: 220 30% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 220 20% 10%;
+    --card: 220 25% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 20% 10%;
+    --popover: 220 25% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 280 90% 65%;
+    --primary: 210 100% 56%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 20% 15%;
+    --secondary: 220 25% 12%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 20% 15%;
+    --muted: 220 25% 12%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 170 100% 50%;
+    --accent: 280 100% 70%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 280 90% 65%;
+    --border: 220 25% 15%;
+    --input: 220 25% 15%;
+    --ring: 210 100% 56%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom portfolio tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(280 90% 65%) 0%, hsl(250 85% 60%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(170 100% 50%) 0%, hsl(200 100% 45%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 20% 10%) 100%);
-    --gradient-mesh: radial-gradient(at 20% 30%, hsl(280 90% 65% / 0.25) 0px, transparent 50%),
-                     radial-gradient(at 80% 20%, hsl(170 100% 50% / 0.2) 0px, transparent 50%),
-                     radial-gradient(at 40% 80%, hsl(200 100% 45% / 0.15) 0px, transparent 50%),
-                     radial-gradient(at 90% 70%, hsl(310 85% 60% / 0.2) 0px, transparent 50%);
+    /* Modern tech color palette */
+    --neon-blue: 210 100% 56%;
+    --neon-purple: 280 100% 70%;
+    --neon-cyan: 180 100% 50%;
+    --neon-pink: 330 100% 65%;
     
-    --shadow-glow: 0 0 60px -10px hsl(280 90% 65% / 0.6);
-    --shadow-accent-glow: 0 0 60px -10px hsl(170 100% 50% / 0.7);
-    --shadow-elegant: 0 20px 80px -20px hsl(220 25% 5% / 0.6);
+    /* Advanced gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%) 0%, hsl(280 100% 70%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(280 100% 70%) 0%, hsl(330 100% 65%) 100%);
+    --gradient-tech: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(210 100% 56%) 50%, hsl(280 100% 70%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 25% 10%) 0%, hsl(220 25% 8%) 100%);
+    --gradient-mesh: radial-gradient(at 15% 25%, hsl(210 100% 56% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 85% 15%, hsl(280 100% 70% / 0.25) 0px, transparent 50%),
+                     radial-gradient(at 45% 75%, hsl(180 100% 50% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 90% 80%, hsl(330 100% 65% / 0.25) 0px, transparent 50%),
+                     radial-gradient(at 10% 90%, hsl(210 100% 56% / 0.15) 0px, transparent 50%);
     
-    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Enhanced shadows with neon glow */
+    --shadow-glow: 0 0 80px -15px hsl(210 100% 56% / 0.8), 0 0 40px -10px hsl(280 100% 70% / 0.6);
+    --shadow-accent-glow: 0 0 80px -15px hsl(280 100% 70% / 0.8), 0 0 40px -10px hsl(330 100% 65% / 0.6);
+    --shadow-tech-glow: 0 0 60px -10px hsl(180 100% 50% / 0.7);
+    --shadow-elegant: 0 25px 100px -25px hsl(220 30% 3% / 0.8);
+    
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .light {
@@ -178,14 +188,14 @@ All colors MUST be HSL.
   .gradient-shift {
     background: linear-gradient(
       270deg,
-      hsl(280 90% 65%),
-      hsl(170 100% 50%),
-      hsl(200 100% 45%),
-      hsl(310 85% 60%),
-      hsl(280 90% 65%)
+      hsl(210 100% 56%),
+      hsl(180 100% 50%),
+      hsl(280 100% 70%),
+      hsl(330 100% 65%),
+      hsl(210 100% 56%)
     );
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background-size: 500% 500%;
+    animation: gradientShift 20s ease infinite;
   }
 
   @keyframes gradientShift {
