@@ -56,24 +56,11 @@ const projects = [
 export const Projects = () => {
   const [filter, setFilter] = useState<string>("All");
   
-  // Only 3 main filters
-  const mainFilters = ["All", "AI & Machine Learning", "Web Development"];
+  const allTechnologies = ["All", ...new Set(projects.flatMap(p => p.technologies))];
   
   const filteredProjects = filter === "All" 
     ? projects 
-    : projects.filter(p => {
-        if (filter === "AI & Machine Learning") {
-          return p.technologies.some(tech => 
-            ["Machine Learning", "AI", "TensorFlow / PyTorch", "OpenCV"].includes(tech)
-          );
-        }
-        if (filter === "Web Development") {
-          return p.technologies.some(tech => 
-            ["React.js", "Flask", "Node.js", "electron.js", "Tailwind"].includes(tech)
-          );
-        }
-        return true;
-      });
+    : projects.filter(p => p.technologies.includes(filter));
 
   return (
     <section id="projects" className="py-20 relative">
@@ -86,101 +73,94 @@ export const Projects = () => {
            A glimpse into my creations and experiments          </p>
         </div>
 
-        {/* Simplified 3 Filter Chips */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {mainFilters.map((filterName, index) => (
+        {/* Creative Filter Chips */}
+        <div className="flex flex-wrap justify-center gap-3 mb-16 px-4">
+          {allTechnologies.map((tech, index) => (
             <button
-              key={filterName}
-              onClick={() => setFilter(filterName)}
+              key={tech}
+              onClick={() => setFilter(tech)}
               className={`
-                group relative px-8 py-4 rounded-2xl font-bold text-base
+                group relative px-6 py-3 rounded-2xl font-semibold text-sm
                 transition-all duration-500 ease-out
-                ${filter === filterName 
-                  ? 'bg-gradient-tech text-white shadow-glow scale-110' 
-                  : 'bg-card/60 text-muted-foreground hover:text-foreground border-2 border-primary/40 hover:border-primary/70 hover:scale-105'
+                ${filter === tech 
+                  ? 'bg-gradient-tech text-white shadow-glow scale-105' 
+                  : 'bg-card/50 text-muted-foreground hover:text-foreground border border-primary/30 hover:border-primary/60 hover:scale-105'
                 }
               `}
               style={{
-                animationDelay: `${index * 0.1}s`,
+                animationDelay: `${index * 0.05}s`,
               }}
             >
               {/* Animated background on hover */}
-              {filter !== filterName && (
+              {filter !== tech && (
                 <div className="absolute inset-0 rounded-2xl bg-gradient-tech opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
               )}
               
-              {/* Icon indicator */}
-              <span className="relative z-10 flex items-center gap-3">
-                {filter === filterName && (
-                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+              {/* Tech icon indicator */}
+              <span className="relative z-10 flex items-center gap-2">
+                {filter === tech && (
+                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                 )}
-                {filterName}
+                {tech}
               </span>
               
               {/* Bottom glow effect */}
-              {filter === filterName && (
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3/4 h-1.5 bg-gradient-tech blur-md" />
+              {filter === tech && (
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-tech blur-md" />
               )}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
             <Card
               key={index}
-              className="glass-card overflow-hidden group perspective-1000 border-2 border-primary/20 hover:border-primary/40 transition-all duration-700 hover:shadow-glow"
+              className="glass-card overflow-hidden hover-glow group perspective-1000"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 overflow-hidden transform transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-accent-glow">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-tech opacity-0 group-hover:opacity-30 transition-opacity duration-700" />
-                
-                {/* Floating icon */}
-                <div className="absolute top-4 right-4 w-14 h-14 bg-gradient-tech rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-glow">
-                  <ExternalLink className="h-6 w-6 text-white" />
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
               </div>
 
-              <div className="p-8 relative">
-                <h3 className="text-2xl md:text-3xl font-display font-bold mb-3 group-hover:gradient-text transition-all duration-300">
+              <div className="p-6 relative">
+                <div className="absolute -top-3 right-6 w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
+                  <ExternalLink className="h-5 w-5 text-accent-foreground" />
+                </div>
+                <h3 className="text-2xl font-display font-semibold mb-2">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6 text-base">
+                <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, techIndex) => (
                     <Badge
                       key={techIndex}
                       variant="secondary"
-                      className="bg-secondary/60 text-sm px-3 py-1 hover:bg-gradient-tech hover:text-white transition-all duration-300"
+                      className="bg-secondary/50"
                     >
                       {tech}
                     </Badge>
                   ))}
-                  {project.technologies.length > 4 && (
-                    <Badge variant="secondary" className="bg-secondary/60 text-sm px-3 py-1">
-                      +{project.technologies.length - 4}
-                    </Badge>
-                  )}
                 </div>
 
-                <div className="flex gap-4">
-                  <Button variant="outline" size="lg" className="flex-1 border-2 hover:border-primary hover:bg-primary/10" asChild>
+                <div className="flex gap-3">
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-5 w-5" />
+                      <Github className="mr-2 h-4 w-4" />
                       Code
                     </a>
                   </Button>
-                  <Button size="lg" className="flex-1 bg-gradient-tech hover:shadow-glow" asChild>
+                  <Button size="sm" className="flex-1 bg-gradient-primary" asChild>
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-5 w-5" />
+                      <ExternalLink className="mr-2 h-4 w-4" />
                       Demo
                     </a>
                   </Button>
