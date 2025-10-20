@@ -23,7 +23,7 @@ export const Hero = () => {
         <img
           src={heroImage}
           alt="Hero background"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
       </div>
@@ -45,20 +45,15 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Title */}
           <div className="animate-slide-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm font-mono text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
-                &lt;developer /&gt;
-              </span>
-            </div>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-              Software Engineer
-              <span className="gradient-text block mt-4">
+              Final-year software engineering student
+              <span className="gradient-text block mt-2">
                 <Typewriter
                   texts={[
-                    "{ Code. Create. Deploy. }",
-                    "Building Digital Solutions",
-                    "Transforming Ideas → Reality",
-                    "Full-Stack Developer",
+                    "Build the Future",
+                    "Think. Create. Innovate.",
+                    "Dream. Develop. Deliver.",
+                    "Next-Level Apps",
                   ]}
                 />
               </span>
@@ -70,8 +65,8 @@ export const Hero = () => {
             className="animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto font-mono">
-              Final-year student crafting innovative digital experiences with modern tech
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Passionate engineer turning innovative ideas into exceptional experiences.
             </p>
           </div>
 
@@ -83,20 +78,20 @@ export const Hero = () => {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-gradient-primary hover:shadow-glow transition-all font-mono group"
+              className="bg-gradient-primary hover:shadow-glow transition-all"
             >
-              <Mail className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              Contact Me
+              <Mail className="mr-2 h-5 w-5" />
+              Let’s Connect
             </Button>
 
             <Button
               size="lg"
               onClick={openCV}
               variant="outline"
-              className="border-primary/30 hover:border-primary hover:bg-primary/10 font-mono group"
+              className="border-primary/50 hover:bg-primary/10"
             >
-              <Briefcase className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Download CV
+              <Briefcase className="mr-2 h-5 w-5" />
+             View My Resume
             </Button>
           </div>
 
