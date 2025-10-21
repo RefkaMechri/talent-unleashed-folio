@@ -15,6 +15,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Stats } from "@/components/sections/Stats";
+import { Skills } from "@/components/sections/Skills";
 
 const Index = () => {
   useEffect(() => {
@@ -38,6 +39,7 @@ const Index = () => {
         <Hero />
         <Stats />
         <About />
+        <Skills />
         <Education />
         <Experience />
         <Projects />

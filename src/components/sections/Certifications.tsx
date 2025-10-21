@@ -70,36 +70,37 @@ export const Certifications = () => {
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {certifications.map((cert, index) => (
-            <Card
+            <div
               key={index}
-              className="glass-card p-6 hover-glow group cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
+              className="code-card p-6 group cursor-pointer hover:scale-105 transition-all"
               onClick={() => window.open(cert.ImgPdf, "_blank")}
               title="Click to view certificate"
             >
               <div className="flex items-start gap-3 mb-4">
-                <div className="p-2 bg-gradient-primary rounded-lg">
-                  <GraduationCap className="h-5 w-5 text-primary-foreground" />
+                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <GraduationCap className="h-5 w-5 text-primary" />
                 </div>
                 {cert.verified && (
-                  <CheckCircle2 className="h-5 w-5 text-accent ml-auto" />
+                  <CheckCircle2 className="h-4 w-4 text-primary ml-auto" />
                 )}
               </div>
 
-              <h3 className="text-lg font-display font-semibold mb-2">
+              <h3 className="text-base font-semibold mb-2 font-mono">
                 {cert.title}
               </h3>
 
-              <p className="text-sm text-primary font-medium mb-1">
+              <p className="text-sm text-primary font-medium mb-1 font-mono">
                 {cert.issuer}
               </p>
 
               <div className="flex items-center justify-between mt-4">
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-xs font-mono border-primary/30">
                   {cert.date}
                 </Badge>
-                
               </div>
-            </Card>
+
+              <div className="h-0.5 w-0 group-hover:w-full bg-gradient-primary transition-all duration-500 mt-4" />
+            </div>
           ))}
         </div>
       </div>

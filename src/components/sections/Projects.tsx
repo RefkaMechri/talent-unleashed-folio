@@ -66,107 +66,92 @@ export const Projects = () => {
     <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-mono text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+              &lt;projects /&gt;
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Ideas <span className="gradient-text">in</span> action
+            Featured <span className="gradient-text">Work</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-           A glimpse into my creations and experiments          </p>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-mono">
+            Solutions built with modern tech and best practices
+          </p>
         </div>
 
-        {/* Creative Filter Chips */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16 px-4">
-          {allTechnologies.map((tech, index) => (
+        {/* Filter Chips */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12 px-4">
+          {allTechnologies.slice(0, 5).map((tech, index) => (
             <button
               key={tech}
               onClick={() => setFilter(tech)}
               className={`
-                group relative px-6 py-3 rounded-2xl font-semibold text-sm
-                transition-all duration-500 ease-out
+                px-4 py-2 rounded font-mono text-xs transition-all
                 ${filter === tech 
-                  ? 'bg-gradient-tech text-white shadow-glow scale-105' 
-                  : 'bg-card/50 text-muted-foreground hover:text-foreground border border-primary/30 hover:border-primary/60 hover:scale-105'
+                  ? 'bg-primary text-primary-foreground shadow-glow' 
+                  : 'bg-secondary/50 text-muted-foreground hover:text-foreground border border-primary/20 hover:border-primary/40'
                 }
               `}
-              style={{
-                animationDelay: `${index * 0.05}s`,
-              }}
             >
-              {/* Animated background on hover */}
-              {filter !== tech && (
-                <div className="absolute inset-0 rounded-2xl bg-gradient-tech opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              )}
-              
-              {/* Tech icon indicator */}
-              <span className="relative z-10 flex items-center gap-2">
-                {filter === tech && (
-                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                )}
-                {tech}
-              </span>
-              
-              {/* Bottom glow effect */}
-              {filter === tech && (
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-tech blur-md" />
-              )}
+              {filter === tech && <span className="mr-2">▸</span>}
+              {tech}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project, index) => (
-            <Card
+            <div
               key={index}
-              className="glass-card overflow-hidden hover-glow group perspective-1000"
+              className="code-card overflow-hidden group"
             >
-              <div className="relative h-48 overflow-hidden transform transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-accent-glow">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
               </div>
 
-              <div className="p-6 relative">
-                <div className="absolute -top-3 right-6 w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
-                  <ExternalLink className="h-5 w-5 text-accent-foreground" />
-                </div>
-                <h3 className="text-2xl font-display font-semibold mb-2">
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 font-mono">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
                     <Badge
                       key={techIndex}
                       variant="secondary"
-                      className="bg-secondary/50"
+                      className="bg-secondary/50 font-mono text-xs"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" className="flex-1 font-mono text-xs" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
+                      <Github className="mr-1 h-3 w-3" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" className="flex-1 bg-gradient-primary" asChild>
+                  <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90 font-mono text-xs" asChild>
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                      <ExternalLink className="mr-1 h-3 w-3" />
                       Demo
                     </a>
                   </Button>
                 </div>
+
+                <div className="h-0.5 w-0 group-hover:w-full bg-gradient-primary transition-all duration-500 mt-4" />
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>

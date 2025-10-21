@@ -45,15 +45,20 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Title */}
           <div className="animate-slide-up">
+            <div className="inline-block mb-4">
+              <span className="text-sm font-mono text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                &lt;developer /&gt;
+              </span>
+            </div>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-              Final-year software engineering student
-              <span className="gradient-text block mt-2">
+              Software Engineer
+              <span className="gradient-text block mt-2 font-mono">
                 <Typewriter
                   texts={[
-                    "Build the Future",
-                    "Think. Create. Innovate.",
-                    "Dream. Develop. Deliver.",
-                    "Next-Level Apps",
+                    "{ Code. Create. Deploy. }",
+                    "while(alive) { learn(); }",
+                    "if (idea) { build(); }",
+                    "function innovate() {...}",
                   ]}
                 />
               </span>
@@ -65,8 +70,8 @@ export const Hero = () => {
             className="animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Passionate engineer turning innovative ideas into exceptional experiences.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto font-mono">
+              Building scalable solutions with clean code and modern tech
             </p>
           </div>
 

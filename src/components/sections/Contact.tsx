@@ -39,32 +39,39 @@ export const Contact = () => {
     <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-mono text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+              &lt;contact /&gt;
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-          <span className="gradient-text">Get in</span> Touch
-           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Questions? Projects? Reach out anytime!          </p>
+            Let's <span className="gradient-text">Connect</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-mono">
+            Open to opportunities and collaborations
+          </p>
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-display font-semibold mb-6">
-                    Stay connected              </h3>
+            <div className="code-card p-6">
+              <h3 className="text-xl font-semibold mb-6 font-mono">
+                // Contact Info
+              </h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <a
                     key={index}
                     href={info.href}
-                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors group"
+                    className="flex items-center gap-3 p-3 rounded bg-secondary/30 hover:bg-secondary/50 transition-colors group"
                   >
-                    <div className="p-2 bg-gradient-primary rounded-lg">
-                      <info.icon className="h-5 w-5 text-primary-foreground" />
+                    <div className="p-2 bg-primary/10 rounded group-hover:bg-primary/20 transition-colors">
+                      <info.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="font-medium group-hover:text-primary transition-colors">
+                      <p className="text-xs text-muted-foreground font-mono">{info.label}</p>
+                      <p className="text-sm font-medium group-hover:text-primary transition-colors font-mono">
                         {info.value}
                       </p>
                     </div>
@@ -85,17 +92,10 @@ export const Contact = () => {
           {/* Contact Form */}
           <Card className="glass-card p-8">
            <form onSubmit={handleSubmit} className="space-y-6">
-  <div>
-    <label htmlFor="name" className="block text-sm font-medium mb-2">
-      Name
-    </label>
-    <Input
-      id="name"
-      placeholder="Your name"
-      required
-      className="bg-secondary/30"
-    />
-  </div>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 font-mono">Name</label>
+                <Input id="name" placeholder="Your name" required className="bg-secondary/30 border-primary/20 font-mono" />
+              </div>
 
   <div>
     <label htmlFor="email" className="block text-sm font-medium mb-2">
@@ -135,13 +135,12 @@ export const Contact = () => {
     />
   </div>
 
-  <Button type="submit" className="w-full bg-gradient-primary hover:shadow-glow">
-    <Send className="mr-2 h-4 w-4" />
-    Send Message
-  </Button>
-</form>
-
-          </Card>
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 hover:shadow-glow font-mono">
+                <Send className="mr-2 h-4 w-4" />
+                Send Message
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

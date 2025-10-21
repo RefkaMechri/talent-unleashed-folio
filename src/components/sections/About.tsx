@@ -16,100 +16,138 @@ export const About = () => {
 
         {/* Header */}
         <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-mono text-primary bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+              &lt;about /&gt;
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Get to Know <span className="gradient-text">Me</span>
+            Who I <span className="gradient-text">Am</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate about technology and innovation, I craft solutions that make a real impact.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-mono">
+            Building digital experiences with passion and precision
           </p>
         </div>
 
-        {/* Skills Grid - Enhanced Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-6xl mx-auto">
+        {/* Quick Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: index * 0.1, type: "spring" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="code-card p-4 text-center group hover:scale-105 transition-all"
             >
-              <Card className="glass-card p-8 h-full border-2 border-primary/20 hover:border-primary/50 transition-all duration-500 relative overflow-hidden">
-                {/* Animated gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-tech opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-                
-                <div className="relative z-10 flex flex-col gap-5">
-                  <div className="flex items-center gap-5">
-                    {/* Icon with enhanced glow */}
-                    <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center rounded-3xl bg-gradient-tech shadow-tech-glow group-hover:shadow-glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                      <skill.icon className="h-10 w-10 text-white" />
-                    </div>
-                    
-                    {/* Title */}
-                    <h3 className="text-2xl md:text-3xl font-bold gradient-text group-hover:scale-105 transition-transform duration-300">
-                      {skill.title}
-                    </h3>
-                  </div>
-                  
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                    {skill.description}
-                  </p>
-                  
-                  {/* Bottom accent line */}
-                  <div className="h-1 w-0 group-hover:w-full bg-gradient-tech transition-all duration-700 rounded-full" />
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <skill.icon className="h-6 w-6 text-primary" />
                 </div>
-              </Card>
+              </div>
+              <h3 className="text-sm font-semibold mb-1 font-mono">{skill.title}</h3>
+              <p className="text-xs text-muted-foreground">{skill.description}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Bio Card - Enhanced */}
-        <motion.div
-          className="glass-card p-12 md:p-16 max-w-6xl mx-auto rounded-3xl border-2 border-primary/30 relative overflow-hidden group"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, type: "spring" }}
-        >
-          {/* Enhanced decorative gradients */}
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
-          <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-tr from-accent/30 to-transparent rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-tech opacity-10 rounded-full blur-3xl" />
-          
-          <div className="relative z-10">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-1 w-16 bg-gradient-tech rounded-full" />
-              <h3 className="text-4xl md:text-5xl font-bold gradient-text">About Me</h3>
-              <div className="h-1 flex-1 bg-gradient-tech rounded-full opacity-30" />
+        {/* Bio Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+          <motion.div
+            className="lg:col-span-2 code-card p-8"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-0.5 w-12 bg-primary" />
+              <h3 className="text-2xl font-bold font-mono text-primary">const me = {`{`}</h3>
             </div>
             
-            <div className="space-y-6">
-              <p className="text-lg md:text-xl leading-relaxed text-foreground/90">
-                Highly motivated and versatile <span className="gradient-text font-semibold">software engineer</span>, passionate about creating solutions that solve complex problems. I combine creativity with a collaborative mindset to deliver meaningful results.
+            <div className="space-y-4 pl-6 font-mono text-sm md:text-base">
+              <p className="text-foreground/90">
+                <span className="text-accent">role:</span> <span className="text-primary">"Software Engineer"</span>,
               </p>
-              <p className="text-lg md:text-xl leading-relaxed text-foreground/90">
-                Always eager to learn and adapt, I thrive in fast-paced environments where <span className="gradient-text font-semibold">innovation meets efficiency</span>. Committed to excellence and driven to contribute to impactful projects that make a difference.
+              <p className="text-foreground/90">
+                <span className="text-accent">passion:</span> <span className="text-foreground/80">"Building scalable solutions that solve real problems"</span>,
+              </p>
+              <p className="text-foreground/90">
+                <span className="text-accent">focus:</span> <span className="text-foreground/80">["Full-Stack", "AI/ML", "Cloud"]</span>,
+              </p>
+              <p className="text-foreground/90">
+                <span className="text-accent">mindset:</span> <span className="text-foreground/80">"Always learning, always building"</span>
               </p>
             </div>
-            
-            {/* Stats row */}
-            <div className="grid grid-cols-3 gap-6 mt-10 pt-8 border-t border-primary/20">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">3+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+
+            <div className="flex items-center gap-3 mt-6">
+              <h3 className="text-2xl font-bold font-mono text-primary">{`}`}</h3>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="code-card p-6"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-bold mb-4 font-mono text-primary">// Quick Facts</h3>
+            <div className="space-y-3 font-mono text-sm">
+              <div className="flex items-center gap-2">
+                <span className="text-accent">▸</span>
+                <span className="text-foreground/80">3+ Years Coding</span>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">10+</div>
-                <div className="text-sm text-muted-foreground">Projects</div>
+              <div className="flex items-center gap-2">
+                <span className="text-accent">▸</span>
+                <span className="text-foreground/80">15+ Projects Built</span>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">5+</div>
-                <div className="text-sm text-muted-foreground">Technologies</div>
+              <div className="flex items-center gap-2">
+                <span className="text-accent">▸</span>
+                <span className="text-foreground/80">10+ Certifications</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-accent">▸</span>
+                <span className="text-foreground/80">Open to Opportunities</span>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Mission & Vision */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <motion.div
+            className="code-card p-6 group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-8 w-1 bg-primary" />
+              <h3 className="text-xl font-bold font-mono">Mission</h3>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              To create innovative software solutions that make technology accessible and impactful for everyone.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="code-card p-6 group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-8 w-1 bg-accent" />
+              <h3 className="text-xl font-bold font-mono">Values</h3>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Clean code, continuous learning, collaboration, and delivering solutions that truly matter.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
