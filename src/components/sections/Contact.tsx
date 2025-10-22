@@ -91,56 +91,56 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <Card className="glass-card p-8">
-           <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2 font-mono">Name</label>
                 <Input id="name" placeholder="Your name" required className="bg-secondary/30 border-primary/20 font-mono" />
               </div>
 
-  <div>
-    <label htmlFor="email" className="block text-sm font-medium mb-2">
-      Email
-    </label>
-    <Input
-      id="email"
-      type="email"
-      placeholder="your@email.com"
-      required
-      className="bg-secondary/30"
-    />
-  </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2 font-mono">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  className="bg-secondary/30 border-primary/20 font-mono"
+                />
+              </div>
 
-  <div>
-    <label htmlFor="subject" className="block text-sm font-medium mb-2">
-      Subject
-    </label>
-    <Input
-      id="subject"
-      placeholder="Message subject"
-      required
-      className="bg-secondary/30"
-    />
-  </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2 font-mono">
+                  Subject
+                </label>
+                <Input
+                  id="subject"
+                  placeholder="Message subject"
+                  required
+                  className="bg-secondary/30 border-primary/20 font-mono"
+                />
+              </div>
 
-  <div>
-    <label htmlFor="message" className="block text-sm font-medium mb-2">
-      Message
-    </label>
-    <Textarea
-      id="message"
-      placeholder="Your message..."
-      rows={5}
-      required
-      className="bg-secondary/30 resize-none"
-    />
-  </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 font-mono">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  placeholder="Your message..."
+                  rows={5}
+                  required
+                  className="bg-secondary/30 border-primary/20 resize-none font-mono"
+                />
+              </div>
 
               <Button type="submit" className="w-full bg-primary hover:bg-primary/90 hover:shadow-glow font-mono">
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
               </Button>
             </form>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
