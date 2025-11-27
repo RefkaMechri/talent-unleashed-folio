@@ -16,6 +16,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Stats } from "@/components/sections/Stats";
 import { Skills } from "@/components/sections/Skills";
+import { GitHubStats } from "@/components/sections/GitHubStats";
 
 const Index = () => {
   useEffect(() => {
@@ -44,6 +45,7 @@ const Index = () => {
         <Experience />
         <Projects />
         <Competitions />
+        <GitHubStats />
         <Certifications />
         <Contact />
       </main>
